@@ -6,8 +6,8 @@ use MiaKiwi\Kaphpir\Errors\Http\HttpError;
 
 class BandwidthLimitExceeded extends HttpError
 {
-    public function __construct(array $previous = [], string $message = 'Bandwidth Limit Exceeded')
+    public function __construct(string $message = 'Bandwidth Limit Exceeded', array $previous = [])
     {
-        parent::__construct(509, $message, $previous);
+        parent::__construct(509, 'BANDWIDTH_LIMIT_EXCEEDED', $message, $previous);
     }
 }

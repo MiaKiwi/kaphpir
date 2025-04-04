@@ -6,8 +6,8 @@ use MiaKiwi\Kaphpir\Errors\Http\HttpError;
 
 class PreconditionFailed extends HttpError
 {
-    public function __construct(array $previous = [], string $message = 'Precondition Failed')
+    public function __construct(string $message = 'Precondition Failed', array $previous = [])
     {
-        parent::__construct(412, $message, $previous);
+        parent::__construct(412, 'PRECONDITION_FAILED', $message, $previous);
     }
 }

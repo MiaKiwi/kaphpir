@@ -6,8 +6,8 @@ use MiaKiwi\Kaphpir\Errors\Http\HttpError;
 
 class ProxyAuthenticationRequired extends HttpError
 {
-    public function __construct(array $previous = [], string $message = 'Proxy Authentication Required')
+    public function __construct(string $message = 'Proxy Authentication Required', array $previous = [])
     {
-        parent::__construct(407, $message, $previous);
+        parent::__construct(407, 'PROXY_AUTHENTICATION_REQUIRED', $message, $previous);
     }
 }

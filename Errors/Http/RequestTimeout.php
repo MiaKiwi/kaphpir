@@ -6,8 +6,8 @@ use MiaKiwi\Kaphpir\Errors\Http\HttpError;
 
 class RequestTimeout extends HttpError
 {
-    public function __construct(array $previous = [], string $message = 'Request Timeout')
+    public function __construct(string $message = 'Request Timeout', array $previous = [])
     {
-        parent::__construct(408, $message, $previous);
+        parent::__construct(408, 'REQUEST_TIMEOUT', $message, $previous);
     }
 }

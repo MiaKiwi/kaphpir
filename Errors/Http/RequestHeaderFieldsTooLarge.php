@@ -6,8 +6,8 @@ use MiaKiwi\Kaphpir\Errors\Http\HttpError;
 
 class RequestHeaderFieldsTooLarge extends HttpError
 {
-    public function __construct(array $previous = [], string $message = 'Request Header Fields Too Large')
+    public function __construct(string $message = 'Request Header Fields Too Large', array $previous = [])
     {
-        parent::__construct(431, $message, $previous);
+        parent::__construct(431, 'REQUEST_HEADER_FIELDS_TOO_LARGE', $message, $previous);
     }
 }

@@ -4,10 +4,10 @@ namespace MiaKiwi\Kaphpir\Errors\Http;
 
 use MiaKiwi\Kaphpir\Errors\Http\HttpError;
 
-class Networkconnecttimeouterror extends HttpError
+class NetworkConnectTimeoutError extends HttpError
 {
-    public function __construct(array $previous = [], string $message = 'Network connect timeout error')
+    public function __construct(string $message = 'Network connect timeout error', array $previous = [])
     {
-        parent::__construct(599, $message, $previous);
+        parent::__construct(599, 'NETWORK_CONNECT_TIMEOUT_ERROR', $message, $previous);
     }
 }

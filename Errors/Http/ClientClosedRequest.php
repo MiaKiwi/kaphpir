@@ -6,8 +6,8 @@ use MiaKiwi\Kaphpir\Errors\Http\HttpError;
 
 class ClientClosedRequest extends HttpError
 {
-    public function __construct(array $previous = [], string $message = 'Client Closed Request')
+    public function __construct(string $message = 'Client Closed Request', array $previous = [])
     {
-        parent::__construct(499, $message, $previous);
+        parent::__construct(499, 'CLIENT_CLOSED_REQUEST', $message, $previous);
     }
 }

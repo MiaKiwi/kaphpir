@@ -6,8 +6,8 @@ use MiaKiwi\Kaphpir\Errors\Http\HttpError;
 
 class Gone extends HttpError
 {
-    public function __construct(array $previous = [], string $message = 'Gone')
+    public function __construct(string $message = 'Gone', array $previous = [])
     {
-        parent::__construct(410, $message, $previous);
+        parent::__construct(410, 'GONE', $message, $previous);
     }
 }

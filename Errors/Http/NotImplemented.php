@@ -6,8 +6,8 @@ use MiaKiwi\Kaphpir\Errors\Http\HttpError;
 
 class NotImplemented extends HttpError
 {
-    public function __construct(array $previous = [], string $message = 'Not Implemented')
+    public function __construct(string $message = 'Not Implemented', array $previous = [])
     {
-        parent::__construct(501, $message, $previous);
+        parent::__construct(501, 'NOT_IMPLEMENTED', $message, $previous);
     }
 }

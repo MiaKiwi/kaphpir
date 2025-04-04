@@ -4,10 +4,10 @@ namespace MiaKiwi\Kaphpir\Errors\Http;
 
 use MiaKiwi\Kaphpir\Errors\Http\HttpError;
 
-class Imateapot extends HttpError
+class ImATeapot extends HttpError
 {
-    public function __construct(array $previous = [], string $message = 'I\'m a teapot')
+    public function __construct(string $message = 'I’m a teapot', array $previous = [])
     {
-        parent::__construct(418, $message, $previous);
+        parent::__construct(418, 'I___M_A_TEAPOT', $message, $previous);
     }
 }

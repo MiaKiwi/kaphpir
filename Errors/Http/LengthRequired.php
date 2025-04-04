@@ -6,8 +6,8 @@ use MiaKiwi\Kaphpir\Errors\Http\HttpError;
 
 class LengthRequired extends HttpError
 {
-    public function __construct(array $previous = [], string $message = 'Length Required')
+    public function __construct(string $message = 'Length Required', array $previous = [])
     {
-        parent::__construct(411, $message, $previous);
+        parent::__construct(411, 'LENGTH_REQUIRED', $message, $previous);
     }
 }

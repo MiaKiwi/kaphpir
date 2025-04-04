@@ -6,8 +6,8 @@ use MiaKiwi\Kaphpir\Errors\Http\HttpError;
 
 class UnprocessableEntity extends HttpError
 {
-    public function __construct(array $previous = [], string $message = 'Unprocessable Entity')
+    public function __construct(string $message = 'Unprocessable Entity', array $previous = [])
     {
-        parent::__construct(422, $message, $previous);
+        parent::__construct(422, 'UNPROCESSABLE_ENTITY', $message, $previous);
     }
 }

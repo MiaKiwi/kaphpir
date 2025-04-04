@@ -6,8 +6,8 @@ use MiaKiwi\Kaphpir\Errors\Http\HttpError;
 
 class Locked extends HttpError
 {
-    public function __construct(array $previous = [], string $message = 'Locked')
+    public function __construct(string $message = 'Locked', array $previous = [])
     {
-        parent::__construct(423, $message, $previous);
+        parent::__construct(423, 'LOCKED', $message, $previous);
     }
 }

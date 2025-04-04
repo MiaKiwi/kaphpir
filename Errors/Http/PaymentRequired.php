@@ -6,8 +6,8 @@ use MiaKiwi\Kaphpir\Errors\Http\HttpError;
 
 class PaymentRequired extends HttpError
 {
-    public function __construct(array $previous = [], string $message = 'Payment Required')
+    public function __construct(string $message = 'Payment Required', array $previous = [])
     {
-        parent::__construct(402, $message, $previous);
+        parent::__construct(402, 'PAYMENT_REQUIRED', $message, $previous);
     }
 }

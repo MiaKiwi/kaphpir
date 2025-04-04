@@ -6,8 +6,8 @@ use MiaKiwi\Kaphpir\Errors\Http\HttpError;
 
 class NotAcceptable extends HttpError
 {
-    public function __construct(array $previous = [], string $message = 'Not Acceptable')
+    public function __construct(string $message = 'Not Acceptable', array $previous = [])
     {
-        parent::__construct(406, $message, $previous);
+        parent::__construct(406, 'NOT_ACCEPTABLE', $message, $previous);
     }
 }

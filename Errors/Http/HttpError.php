@@ -8,10 +8,10 @@ abstract class HttpError extends Error
 {
     private int $httpCode;
 
-    public function __construct(int $code, string $message, array $previous = [])
+    public function __construct(int $httpStatus, string $code, string $message, array $previous = [])
     {
         parent::__construct($code, $message, $previous);
-        $this->httpCode = $code;
+        $this->httpCode = $httpStatus;
     }
 
     /**
