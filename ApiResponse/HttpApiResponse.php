@@ -3,6 +3,7 @@
 namespace MiaKiwi\Kaphpir\ApiResponse;
 
 use MiaKiwi\Kaphpir\ApiResponse\IApiResponse;
+use MiaKiwi\Kaphpir\Errors\Http\HttpError;
 use MiaKiwi\Kaphpir\Responses\IResponse;
 use MiaKiwi\Kaphpir\Responses\ResponseStatus;
 use MiaKiwi\Kaphpir\ResponseSerializer\IResponseSerializer;
