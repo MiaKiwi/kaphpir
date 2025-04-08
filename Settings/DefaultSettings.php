@@ -19,6 +19,8 @@ class DefaultSettings extends Settings
             'response.metadata.response_time.enabled' => true, // Include the response datetime in metadata.
             'response.metadata.response_time_format' => 'Y-m-d H:i:sP', // Default format for the response datetime.
             'response.metadata.default' => [], // Default metadata to be included in the response.
+
+            'http.headers.kapir-version.enabled' => true, // Include the KAPIR version in the HTTP headers.
         ]);
     }
 

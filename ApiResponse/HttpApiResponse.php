@@ -7,11 +7,18 @@ use MiaKiwi\Kaphpir\Errors\Http\HttpError;
 use MiaKiwi\Kaphpir\Responses\IResponse;
 use MiaKiwi\Kaphpir\Responses\ResponseStatus;
 use MiaKiwi\Kaphpir\ResponseSerializer\IResponseSerializer;
+use MiaKiwi\Kaphpir\Settings\Settings;
+use MiaKiwi\Kaphpir\Settings\DefaultSettings;
 
 class HttpApiResponse implements IApiResponse
 {
-    public static function send(IResponseSerializer $serializer, IResponse $response, int $httpStatus = 200, array $headers = []): void
+    public static function send(IResponseSerializer $serializer, IResponse $response, ?Settings $settings = null, int $httpStatus = 200, array $headers = []): void
     {
+        // If no settings are provided, use the default settings
+        if ($settings === null) {
+            $settings = DefaultSettings::getInstance();
+        }
+
         // Check if the response is valid
         if (!$response->isValid()) {
             throw new \InvalidArgumentException('Invalid response object provided.');
@@ -27,10 +34,13 @@ class HttpApiResponse implements IApiResponse
             throw new \InvalidArgumentException('Invalid HTTP status code: ' . $httpStatus);
         }
 
-        $headers = array_merge($headers, [
-            'Content-Type' => $serializer::getMimeType(),
-            'Kapir-Version' => $response::getVersion(),
-        ]);
+        // Add the Content-Type header
+        $headers['Content-Type'] = $serializer::getMimeType();
+
+        // Add the KAPIR version header if enabled in settings (the settings of the response apply)
+        if ($settings->getSetting('http.headers.kapir-version.enabled', true)) {
+            $headers['Kapir-Version'] = $response::getVersion();
+        }
 
         // Set the headers
         foreach ($headers as $key => $value) {

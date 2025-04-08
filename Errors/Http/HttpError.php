@@ -15,7 +15,7 @@ abstract class HttpError extends Error
     }
 
     /**
-     * Sets the HTTP status code for the error.
+     * Gets the HTTP status code for the error.
      * @return int
      */
     public function getHttpStatusCode(): int
