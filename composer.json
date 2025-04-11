@@ -1,0 +1,17 @@
+{
+    "name": "miakiwi/kaphpir",
+    "description": "A PHP implementation of the Kiwi API Response format (KAPIR).",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Miakiwi\\Kaphpir\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mia.kiwi",
+            "email": "152985731+MiaKiwi@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
