@@ -458,9 +458,9 @@ class Response implements IResponse
         ];
 
         if ($this->getSetting('response.metadata.enabled', true)) {
-            $array['metadata'] = $this->getMeta()?->getKapirValue();
+            $array['meta'] = $this->getMeta()?->getKapirValue();
         } else {
-            $array['metadata'] = null;
+            $array['meta'] = null;
         }
 
         return $array;
